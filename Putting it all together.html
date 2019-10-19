@@ -351,7 +351,7 @@ ol, ul {
               <li id = "pressure"> </li>
               <li id = "humidity"> </li>
             </ul>
-            <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Learn More</a>
+            <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
          </div>
       </div>
    </div>
@@ -387,11 +387,11 @@ url:"https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=20
 $.ajax({
   url:"http://api.openweathermap.org/data/2.5/weather?q=Mississauga,CAN&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
     //CityName = "City Name: " + data.name;
-    MainWeather = "Weather: " + data.weather[0].main + " - " + data.weather[0].description;
+    MainWeather = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
     // Description = data.weather[0].description;
-    Temperature = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+" °C";
+    Temperature = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
     Pressure = "Pressure: " + data.main.pressure + " mBar";
-    Humidity = "Humidity: " + data.main.humidity + " %";
+    Humidity = "Humidity: " + data.main.humidity + "%";
 
     //document.getElementById("name").innerHTML = CityName;
     document.getElementById("weather").innerHTML = MainWeather;
@@ -399,10 +399,7 @@ $.ajax({
     document.getElementById("temperature").innerHTML = Temperature;
     document.getElementById("pressure").innerHTML = Pressure;
     document.getElementById("humidity").innerHTML = Humidity;
-
-
-
-    }
+  }
 });
 console.log(CityName);
 console.log(MainWeather);
