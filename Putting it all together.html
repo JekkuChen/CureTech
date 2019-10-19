@@ -308,8 +308,8 @@ ol, ul {
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >City A</span>
-                     <p class="ct-popup__content" > <span class="ct-popup__content"> </span>
-                        Infected<br />at time 14:00.
+                     <p class="ct-popup__content" >
+                        Status: Infected<br />at time 14:00.<br />Population: 77776
                      </p>
                   </div>
                </div>
@@ -320,7 +320,7 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >City B</span>
                      <p class="ct-popup__content" >
-                        Non-Infected
+                        Status: Non-Infected<br />Population: 34829
                      </p>
                   </div>
                </div>
@@ -331,7 +331,7 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >City C</span>
                      <p class="ct-popup__content" >
-                        Infected<br />at time 13:00.
+                       Status: Infected<br />at time 13:00.<br />Population: 22397
                      </p>
                   </div>
                </div>
@@ -341,22 +341,18 @@ ol, ul {
       <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7" >
          <div class="ct-content" >
             <h2 class="ct-section-header text-left" >
-               Infectious Region<small>Danger imminent</small>
+               State of Orlando<small>Danger: Medium-Risk, Risk-Factor: 33%</small>
             </h2>
             <br >
             <br >
             <ul class="list-unstyled" >
-               <li >Temp: 41 Degrees Celsius
+               <li >Temp: 31 °C
                </li>
-               <li >Humidity: 88%
+               <li >Humidity: 77%
                </li>
-               <li >Pressure: 107.1
+               <li >Pressure: 107.1 m
                </li>
-               <li >Population: 20,000
-               </li>
-               <li >Income: $23 USD/anually
-               </li>
-               <li >Area GDP: -$1221 USD
+               <li >Income: $23 USD/anually per person
                </li>
             </ul>
             <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Learn More</a>
@@ -385,6 +381,7 @@ $(document).ready(function() {
         });
       });
 });
+
 </script>
 </body>
 </html>
