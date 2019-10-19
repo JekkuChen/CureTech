@@ -45,10 +45,6 @@ ol, ul {
     transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     margin-top: 55px;
 }
-.ct-city.a {
-    top: -10%;
-    left: 42%;
-}
 .ct-popup {
     background: #1aa6e2;
     border-radius: 50%;
@@ -111,9 +107,20 @@ ol, ul {
     color: #111f1d;
     font-weight: 900;
 }
+.ct-city.a {
+    top: -10%;
+    left: 42%;
+}
 .ct-city.b {
     top: 43%;
     left: 40%;
+}
+.ct-city.c {
+    top: 24%;
+}
+.ct-city.c {
+    top: 15%;
+    left: 15%;
 }
 .ct-city {
     position: absolute;
@@ -128,13 +135,6 @@ ol, ul {
     top: 46%;
     left: 12px;
   outline: none;
-}
-.ct-city.c {
-    top: 24%;
-}
-.ct-city.c {
-    top: 15%;
-    left: 15%;
 }
 .ct-content {
     width: 100%;
@@ -346,20 +346,17 @@ ol, ul {
             <br >
             <br >
             <ul class="list-unstyled" >
-               <li >Temp: ? °C
-               </li>
-               <li >Humidity: ? %
-               </li>
-               <li >Pressure: ? mBar
-               </li>
-               <li >Income: $? USD/ per person/ anually
-               </li>
+              <li id = "weather"> </li>
+              <li id = "temperature"> </li>
+              <li id = "pressure"> </li>
+              <li id = "humidity"> </li>
             </ul>
             <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Learn More</a>
          </div>
       </div>
    </div>
 </div>
+
 <script language="javascript">
 $(document).ready(function() {
       var city, map;
@@ -389,12 +386,21 @@ url:"https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=20
   });
 $.ajax({
   url:"http://api.openweathermap.org/data/2.5/weather?q=Mississauga,CAN&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
-    CityName = data.name;
-    MainWeather = data.weather[0].main;
-    Description = data.weather[0].description;
-    Temperature = Math.round((data.main.temp-273.00)*10)/10+"°C";
-    Pressure = data.main.pressure;
-    Humidity = data.main.humidity;
+    //CityName = "City Name: " + data.name;
+    MainWeather = "Weather: " + data.weather[0].main + " - " + data.weather[0].description;
+    // Description = data.weather[0].description;
+    Temperature = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+" °C";
+    Pressure = "Pressure: " + data.main.pressure + " mBar";
+    Humidity = "Humidity: " + data.main.humidity + " %";
+
+    //document.getElementById("name").innerHTML = CityName;
+    document.getElementById("weather").innerHTML = MainWeather;
+    // document.getElementById("description").innerHTML = Description;
+    document.getElementById("temperature").innerHTML = Temperature;
+    document.getElementById("pressure").innerHTML = Pressure;
+    document.getElementById("humidity").innerHTML = Humidity;
+
+
 
     }
 });
@@ -404,5 +410,6 @@ console.log(Temperature);
 console.log(Humidity);
 
 </script>
+
 </body>
 </html>
