@@ -30,8 +30,8 @@ ol, ul {
     padding-bottom: 30px;
 }
 .ct-u-padding-bottom-40 {
+    padding-top: 40px;
     padding-bottom: 40px;
-	padding-top: 40px;
 }
 .ct-map {
     position: relative;
@@ -39,10 +39,6 @@ ol, ul {
     -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     margin-top: 55px;
-}
-.ct-city.stone {
-    top: -10%;
-    left: 42%;
 }
 .ct-popup {
     background: #1aa6e2;
@@ -70,13 +66,13 @@ ol, ul {
 }
 .ct-popup__name {
     font-family: 'Oswald', sans-serif;
-    font-size: 48px;
+    font-size: 36px;/*48 px*/
     text-transform: uppercase;
     padding-bottom: 14px;
     display: block;
 }
 .ct-popup__content {
-    font-size: 16px;
+    font-size: 16px;/*16 px*/
     font-family: 'Helvetica', sans-serif;
 }
 .ct-city {
@@ -106,9 +102,21 @@ ol, ul {
     color: #111f1d;
     font-weight: 900;
 }
-.ct-city.orlando {
-    top: 43%;
-    left: 40%;
+.ct-city.a {
+    top: 0%;
+    left: 46%;
+}
+.ct-city.b {
+    top: 23%;
+    left: 15%;
+}
+.ct-city.c {
+    top: 13%;
+    left: -2.5%;
+}
+.ct-city.d {
+    top: 27%;
+    left: 65%;
 }
 .ct-city {
     position: absolute;
@@ -122,14 +130,7 @@ ol, ul {
     position: absolute;
     top: 46%;
     left: 12px;
-	outline: none;
-}
-.ct-city.orlando2 {
-    top: 24%;
-}
-.ct-city.orlando2 {
-    top: 15%;
-    left: 15%;
+  outline: none;
 }
 .ct-content {
     width: 100%;
@@ -149,7 +150,7 @@ ol, ul {
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
     color: #101f1d;
-    font-size: 35px;
+    font-size: 25px;/*25 px*/
     text-transform: uppercase;
     text-align: center;
     padding-top: 45px;
@@ -163,7 +164,7 @@ ol, ul {
 }
 .ct-section-header small {
     color: #303030;
-    font-size: 22px;
+    font-size: 22px;/*22 px*/
     display: block;
     font-weight: 600;
     padding-top: 10px;
@@ -171,7 +172,7 @@ ol, ul {
     text-transform: none;
 }
 .ct-city.active {
-	z-index: 30;
+  z-index: 30;
 }
 .ct-city.active .ct-popup {
     opacity: 1;
@@ -179,12 +180,12 @@ ol, ul {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
-	position: relative;
+  position: relative;
     z-index: 20;
 }
 .ct-content li {
     font-weight: 700;
-    font-size: 17px;
+    font-size: 17px; /*17 px*/ 
     padding-left: 4px;
 }
 .ct-content li:before {
@@ -201,7 +202,7 @@ ol, ul {
     color: white;
 }
 .btn {
-    font-size: 15px;
+    font-size: 15px; /*15 px*/
     padding: 22px 46px 18px;
     line-height: 1;
     text-transform: uppercase;
@@ -212,76 +213,80 @@ ol, ul {
 }
 
 @media (min-width: 1399px) {
-	.container {
-		width: 1334px;
-	}
-	.ct-map__image {
-		max-width: none;
-		width: 562px;
-		margin-top: -3px;
-		position: relative;
-		left: 11px;
-	}
+  .container {
+    width: 1334px;
+  }
+  .ct-map__image {
+    max-width: none;
+    width: 562px;
+    margin-top: -3px;
+    position: relative;
+    left: 11px;
+  }
 }
 @media only screen and (min-width: 1024px) {
-	.ct-content .btn {
-		margin-top: 55px;
-	}
-	.ct-section-header {
-		padding-top: 77px;
-	}
-	.ct-map__section .container {
-		padding-bottom: 71px;
-	}
+  .ct-content .btn {
+    margin-top: 55px;
+  }
+  .ct-section-header {
+    padding-top: 77px;
+  }
+  .ct-map__section .container {
+    padding-bottom: 71px;
+  }
 }
 @media only screen and (min-width: 768px){
-	.ct-popup__content {
-		position: relative;
-		text-align: center;
-		letter-spacing: 0.15px;
-		line-height: 1.25;
-	}
-	.ct-city__name {
-		font-size: 18px;
-	}
+  .ct-popup__content {
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.15px;
+    line-height: 1.25;
+  }
+  .ct-city__name {
+    font-size: 11px;/*18 px*/
+  }
 }
 @media only screen and (max-width: 767px) {
-	.ct-map {
-		margin-top: 40px;
-		width: 100%;
-	}
-	.ct-city.active {
-		width: 100%;
-		height: 100%;
-		top: 0 !important;
-		left: 0 !important;
-		margin: 0;
-		z-index: 40;
-	}
-	.ct-city.active .ct-popup {
-		width: 100%;
-		height: 100%;
-	}
+  .ct-map {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .ct-city.active {
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0;
+    z-index: 40;
+  }
+  .ct-city.active .ct-popup {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media only screen and (max-width: 479px) {
-	.ct-city.stone {
-		top: -30%;
-		left: 42%;
-	}
-	.ct-city.orlando2 {
-		top: -5%;
-		left: 15%;
-	}
-	.ct-city.orlando {
-		top: 23%;
-		left: 40%;
-	}	
+  .ct-city.a {
+    top: -30%;
+    left: 42%;
+  }
+  .ct-city.c {
+    top: -5%;
+    left: 5%;
+  }
+  .ct-city.b {
+    top: 23%;
+    left: 40%;
+  } 
+  .ct-city.d {
+    top: 51%;
+    left: 20%;
+  }
 }
 @media (max-height: 766px) {
-	.ct-section-header {
-		padding-top: 35px;
-	}
-	.ct-map__section .container {
-		padding-bottom: 0px;
-	}
+  .ct-section-header {
+    padding-top: 35px;
+  }
+  .ct-map__section .container {
+    padding-bottom: 0px;
+  }
 }

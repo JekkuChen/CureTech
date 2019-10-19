@@ -35,8 +35,8 @@ ol, ul {
     padding-bottom: 30px;
 }
 .ct-u-padding-bottom-40 {
+    padding-top: 40px;
     padding-bottom: 40px;
-  padding-top: 40px;
 }
 .ct-map {
     position: relative;
@@ -71,13 +71,13 @@ ol, ul {
 }
 .ct-popup__name {
     font-family: 'Oswald', sans-serif;
-    font-size: 48px;
+    font-size: 36px;/*48 px*/
     text-transform: uppercase;
     padding-bottom: 14px;
     display: block;
 }
 .ct-popup__content {
-    font-size: 16px;
+    font-size: 16px;/*16 px*/
     font-family: 'Helvetica', sans-serif;
 }
 .ct-city {
@@ -108,23 +108,20 @@ ol, ul {
     font-weight: 900;
 }
 .ct-city.a {
-    top: -10%;
-    left: 42%;
+    top: 0%;
+    left: 46%;
 }
 .ct-city.b {
-    top: 43%;
-    left: 40%;
-}
-.ct-city.c {
-    top: 24%;
-}
-.ct-city.c {
-    top: 15%;
+    top: 23%;
     left: 15%;
 }
+.ct-city.c {
+    top: 13%;
+    left: -2.5%;
+}
 .ct-city.d {
-    top: 85%;
-    right: 15%;
+    top: 27%;
+    left: 65%;
 }
 .ct-city {
     position: absolute;
@@ -158,7 +155,7 @@ ol, ul {
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
     color: #101f1d;
-    font-size: 35px;
+    font-size: 25px;/*25 px*/
     text-transform: uppercase;
     text-align: center;
     padding-top: 45px;
@@ -172,7 +169,7 @@ ol, ul {
 }
 .ct-section-header small {
     color: #303030;
-    font-size: 22px;
+    font-size: 22px;/*22 px*/
     display: block;
     font-weight: 600;
     padding-top: 10px;
@@ -193,7 +190,7 @@ ol, ul {
 }
 .ct-content li {
     font-weight: 700;
-    font-size: 17px;
+    font-size: 17px; /*17 px*/ 
     padding-left: 4px;
 }
 .ct-content li:before {
@@ -210,7 +207,7 @@ ol, ul {
     color: white;
 }
 .btn {
-    font-size: 15px;
+    font-size: 15px; /*15 px*/
     padding: 22px 46px 18px;
     line-height: 1;
     text-transform: uppercase;
@@ -251,7 +248,7 @@ ol, ul {
     line-height: 1.25;
   }
   .ct-city__name {
-    font-size: 18px;
+    font-size: 11px;/*18 px*/
   }
 }
 @media only screen and (max-width: 767px) {
@@ -279,7 +276,7 @@ ol, ul {
   }
   .ct-city.c {
     top: -5%;
-    left: 15%;
+    left: 5%;
   }
   .ct-city.b {
     top: 23%;
@@ -310,47 +307,47 @@ ol, ul {
    <div class="row ct-u-padding-bottom-40" >
       <div class="col-lg-6 col-lg-push-6 col-md-7 col-md-push-5" >
          <div class="ct-map" >
-            <img alt="Map" class="ct-map__image" src="https://www.solodev.com/assets/map/map-revised.jpg" >
+            <img alt="Map" class="ct-map__image" src="https://earthengine.googleapis.com/api/thumb?thumbid=71062f91c2d03717e28ff443debe433c&token=731a76043c8dff18f035abb64b4007cb" >
             <div class="ct-city a" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" data-pin-nopin="true" ><span class="ct-city__name" >City A</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" data-pin-nopin="true" ><span class="ct-city__name" >Kayunga</span></button>
                <div class="ct-popup" >
                   <div class="inner" >
-                     <span class="ct-popup__name" >City A</span>
+                     <span class="ct-popup__name" >Kayunga</span>
                      <p class="ct-popup__content" >
-                        Status: ???<br />Population: ???
+                        Population Density:<br /> 225.9/km^2<br />Latitude: 0.702743<br /> Longitude: 32.903731
                      </p>
                   </div>
                </div>
             </div>
             <div class="ct-city b">
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png"  data-pin-nopin="true"><span class="ct-city__name" >City B</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png"  data-pin-nopin="true"><span class="ct-city__name" >Mukono</span></button>
                <div class="ct-popup" >
                   <div class="inner" >
-                     <span class="ct-popup__name" >City B</span>
+                     <span class="ct-popup__name" >Mukono</span>
                      <p class="ct-popup__content" >
-                        Status: ???<br />Population: ???
+                        Population Density:<br /> 5,159/km^2<br />Latitude: 0.358217<br /> Longitude: 32.754294
                      </p>
                   </div>
                </div>
             </div>
             <div class="ct-city c" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >City C</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >Kampala</span></button>
                <div class="ct-popup" >
                   <div class="inner" >
-                     <span class="ct-popup__name" >City C</span>
+                     <span class="ct-popup__name" >Kampala</span>
                      <p class="ct-popup__content" >
-                       Status: ??? <br />Population: ???
+                       *CAPITAL*<br />Population Density:<br /> 3200/km^2<br />Latitude: 0.340990<br /> Longitude: 32.5785
                      </p>
                   </div>
                </div>
             </div>
             <div class="ct-city d" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >City D</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >Jinja</span></button>
                <div class="ct-popup" >
                   <div class="inner" >
-                     <span class="ct-popup__name" >City D</span>
+                     <span class="ct-popup__name" >Jinja</span>
                      <p class="ct-popup__content" >
-                       Status: ??? <br />Population: ???
+                       Population Density:<br /> 744.9/km^2<br />Latitude: 0.448300<br /> Longitude: 33.205140
                      </p>
                   </div>
                </div>
@@ -370,7 +367,7 @@ ol, ul {
               <li id = "pressure"> </li>
               <li id = "humidity"> </li>
             </ul>
-            <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
+            <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=2014-06-01&cloud_score=True&dim=0.5&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
          </div>
       </div>
    </div>
@@ -399,12 +396,12 @@ $(document).ready(function() {
 });
 
 $.ajax({
-url:"https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
-  var bla ="<img src="+testing.url+" style = 'width:50%; opacity: 70%;' />";
+url:"https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=2014-06-01&cloud_score=True&dim=0.5&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
+  var bla ="<img src="+testing.url+" style = 'width:50%; opacity: 50%;' />";
   }
   });
 $.ajax({
-  url:"http://api.openweathermap.org/data/2.5/weather?q=Mississauga,CAN&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Kampala,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
     //CityName = "City Name: " + data.name;
     MainWeather = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
     // Description = data.weather[0].description;
@@ -414,7 +411,7 @@ $.ajax({
 
     //document.getElementById("name").innerHTML = CityName;
     document.getElementById("weather").innerHTML = MainWeather;
-    // document.getElementById("description").innerHTML = Description;
+    //document.getElementById("description").innerHTML = Description;
     document.getElementById("temperature").innerHTML = Temperature;
     document.getElementById("pressure").innerHTML = Pressure;
     document.getElementById("humidity").innerHTML = Humidity;
