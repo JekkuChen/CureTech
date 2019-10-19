@@ -8,8 +8,8 @@
 </head>
 <script>
 $.ajax({
-url:"https://api.nasa.gov/planetary/earth/imagery?lon=100.75&lat=1.5&date=2014-02-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
-	document.getElementById("img").innerHTML="<img src="+testing.url+" style = 'width:100%;' />";
+url:"https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2019-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
+	document.getElementById("img").innerHTML="<img src="+testing.url+" style = 'width:100%; opacity: 70%' />";
 	document.getElementById("date").innerHTML = testing.date;
 	document.getElementById("cloud_score").innerHTML = testing.cloud_score;
 	}
