@@ -1,8 +1,9 @@
 <!DOCTYPE html> 
 <html>
 <head>
+</head>
 <style>
-html, body, img, figure {
+  html, body, img, figure {
     max-width: 100%;
 }
 button, .btn {
@@ -35,7 +36,7 @@ ol, ul {
 }
 .ct-u-padding-bottom-40 {
     padding-bottom: 40px;
-	padding-top: 40px;
+  padding-top: 40px;
 }
 .ct-map {
     position: relative;
@@ -43,10 +44,6 @@ ol, ul {
     -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     margin-top: 55px;
-}
-.ct-city.stone {
-    top: -10%;
-    left: 42%;
 }
 .ct-popup {
     background: #1aa6e2;
@@ -110,9 +107,24 @@ ol, ul {
     color: #111f1d;
     font-weight: 900;
 }
-.ct-city.orlando {
+.ct-city.a {
+    top: -10%;
+    left: 42%;
+}
+.ct-city.b {
     top: 43%;
     left: 40%;
+}
+.ct-city.c {
+    top: 24%;
+}
+.ct-city.c {
+    top: 15%;
+    left: 15%;
+}
+.ct-city.d {
+    top: 85%;
+    right: 15%;
 }
 .ct-city {
     position: absolute;
@@ -126,14 +138,7 @@ ol, ul {
     position: absolute;
     top: 46%;
     left: 12px;
-	outline: none;
-}
-.ct-city.orlando2 {
-    top: 24%;
-}
-.ct-city.orlando2 {
-    top: 15%;
-    left: 15%;
+  outline: none;
 }
 .ct-content {
     width: 100%;
@@ -175,7 +180,7 @@ ol, ul {
     text-transform: none;
 }
 .ct-city.active {
-	z-index: 30;
+  z-index: 30;
 }
 .ct-city.active .ct-popup {
     opacity: 1;
@@ -183,7 +188,7 @@ ol, ul {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
-	position: relative;
+  position: relative;
     z-index: 20;
 }
 .ct-content li {
@@ -216,82 +221,162 @@ ol, ul {
 }
 
 @media (min-width: 1399px) {
-	.container {
-		width: 1334px;
-	}
-	.ct-map__image {
-		max-width: none;
-		width: 562px;
-		margin-top: -3px;
-		position: relative;
-		left: 11px;
-	}
+  .container {
+    width: 1334px;
+  }
+  .ct-map__image {
+    max-width: none;
+    width: 562px;
+    margin-top: -3px;
+    position: relative;
+    left: 11px;
+  }
 }
 @media only screen and (min-width: 1024px) {
-	.ct-content .btn {
-		margin-top: 55px;
-	}
-	.ct-section-header {
-		padding-top: 77px;
-	}
-	.ct-map__section .container {
-		padding-bottom: 71px;
-	}
+  .ct-content .btn {
+    margin-top: 55px;
+  }
+  .ct-section-header {
+    padding-top: 77px;
+  }
+  .ct-map__section .container {
+    padding-bottom: 71px;
+  }
 }
 @media only screen and (min-width: 768px){
-	.ct-popup__content {
-		position: relative;
-		text-align: center;
-		letter-spacing: 0.15px;
-		line-height: 1.25;
-	}
-	.ct-city__name {
-		font-size: 18px;
-	}
+  .ct-popup__content {
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.15px;
+    line-height: 1.25;
+  }
+  .ct-city__name {
+    font-size: 18px;
+  }
 }
-@media only screen and (max-width: 768px) {
-	.ct-map {
-		margin-top: 40px;
-		width: 100%;
-	}
-	.ct-city.active {
-		width: 100%;
-		height: 100%;
-		top: 0 !important;
-		left: 0 !important;
-		margin: 0;
-		z-index: 40;
-	}
-	.ct-city.active .ct-popup {
-		width: 100%;
-		height: 100%;
-	}
+@media only screen and (max-width: 767px) {
+  .ct-map {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .ct-city.active {
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0;
+    z-index: 40;
+  }
+  .ct-city.active .ct-popup {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media only screen and (max-width: 479px) {
-	.ct-city.stone {
-		top: -30%;
-		left: 42%;
-	}
-	.ct-city.orlando2 {
-		top: -5%;
-		left: 15%;
-	}
-	.ct-city.orlando {
-		top: 23%;
-		left: 40%;
-	}	
+  .ct-city.a {
+    top: -30%;
+    left: 42%;
+  }
+  .ct-city.c {
+    top: -5%;
+    left: 15%;
+  }
+  .ct-city.b {
+    top: 23%;
+    left: 40%;
+  } 
+  .ct-city.d {
+    top: 51%;
+    left: 20%;
+  }
 }
-@media (max-height: 768px) {
-	.ct-section-header {
-		padding-top: 35px;
-	}
-	.ct-map__section .container {
-		padding-bottom: 10px;
-	}
+@media (max-height: 766px) {
+  .ct-section-header {
+    padding-top: 35px;
+  }
+  .ct-map__section .container {
+    padding-bottom: 0px;
+  }
 }
 </style>
+<body>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="interactive-map.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
+   <div class="container" >
+   <div class="row ct-u-padding-bottom-40" >
+      <div class="col-lg-6 col-lg-push-6 col-md-7 col-md-push-5" >
+         <div class="ct-map" >
+            <img alt="Map" class="ct-map__image" src="https://www.solodev.com/assets/map/map-revised.jpg" >
+            <div class="ct-city a" >
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" data-pin-nopin="true" ><span class="ct-city__name" >City A</span></button>
+               <div class="ct-popup" >
+                  <div class="inner" >
+                     <span class="ct-popup__name" >City A</span>
+                     <p class="ct-popup__content" >
+                        Status: ???<br />Population: ???
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="ct-city b">
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png"  data-pin-nopin="true"><span class="ct-city__name" >City B</span></button>
+               <div class="ct-popup" >
+                  <div class="inner" >
+                     <span class="ct-popup__name" >City B</span>
+                     <p class="ct-popup__content" >
+                        Status: ???<br />Population: ???
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="ct-city c" >
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >City C</span></button>
+               <div class="ct-popup" >
+                  <div class="inner" >
+                     <span class="ct-popup__name" >City C</span>
+                     <p class="ct-popup__content" >
+                       Status: ??? <br />Population: ???
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="ct-city d" >
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >City D</span></button>
+               <div class="ct-popup" >
+                  <div class="inner" >
+                     <span class="ct-popup__name" >City D</span>
+                     <p class="ct-popup__content" >
+                       Status: ??? <br />Population: ???
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7" >
+         <div class="ct-content" >
+            <h2 class="ct-section-header text-left" >
+               Region ? <small>Danger: ?, Risk-Factor: ? %</small>
+            </h2>
+            <br >
+            <br >
+            <ul class="list-unstyled" >
+              <li id = "weather"> </li>
+              <li id = "temperature"> </li>
+              <li id = "pressure"> </li>
+              <li id = "humidity"> </li>
+            </ul>
+            <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script language="javascript">
 $(document).ready(function() {
       var city, map;
       map = $('.ct-map');
@@ -312,80 +397,35 @@ $(document).ready(function() {
         });
       });
 });
+
+$.ajax({
+url:"https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
+  var bla ="<img src="+testing.url+" style = 'width:50%; opacity: 70%;' />";
+  }
+  });
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Mississauga,CAN&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    //CityName = "City Name: " + data.name;
+    MainWeather = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
+    // Description = data.weather[0].description;
+    Temperature = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
+    Pressure = "Pressure: " + data.main.pressure + " mBar";
+    Humidity = "Humidity: " + data.main.humidity + "%";
+
+    //document.getElementById("name").innerHTML = CityName;
+    document.getElementById("weather").innerHTML = MainWeather;
+    // document.getElementById("description").innerHTML = Description;
+    document.getElementById("temperature").innerHTML = Temperature;
+    document.getElementById("pressure").innerHTML = Pressure;
+    document.getElementById("humidity").innerHTML = Humidity;
+  }
+});
+console.log(CityName);
+console.log(MainWeather);
+console.log(Temperature);
+console.log(Humidity);
+
 </script>
-</head>
-<body>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="interactive-map.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-   <div class="container" >
-   <div class="row ct-u-padding-bottom-40" >
-      <div class="col-lg-6 col-lg-push-6 col-md-7 col-md-push-5" >
-         <div class="ct-map" >
-            <img alt="Map" class="ct-map__image" src="https://www.solodev.com/assets/map/map-revised.jpg" >
-            <div class="ct-city stone" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" data-pin-nopin="true" ><span class="ct-city__name" >City A</span></button>
-               <div class="ct-popup" >
-                  <div class="inner" >
-                     <span class="ct-popup__name" >City A</span>
-                     <p class="ct-popup__content" >
-                        Infected<br />at time 14:00.
-                     </p>
-                  </div>
-               </div>
-            </div>
-            <div class="ct-city orlando">
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png"  data-pin-nopin="true"><span class="ct-city__name" >City B</span></button>
-               <div class="ct-popup" >
-                  <div class="inner" >
-                     <span class="ct-popup__name" >City B</span>
-                     <p class="ct-popup__content" >
-                        Non-Infected
-                     </p>
-                  </div>
-               </div>
-            </div>
-            <div class="ct-city orlando2" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >City C</span></button>
-               <div class="ct-popup" >
-                  <div class="inner" >
-                     <span class="ct-popup__name" >City C</span>
-                     <p class="ct-popup__content" >
-                        Infected<br />at time 13:00.
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7" >
-         <div class="ct-content" >
-            <h2 class="ct-section-header text-left" >
-               Infectious Region<small >Danger imminent</small>
-            </h2>
-            <br >
-            <br >
-            <ul class="list-unstyled" >
-               <li >Temp: 41 Degrees Celsius
-               </li>
-               <li >Humidity: 88%
-               </li>
-               <li >Pressure: 107.1
-               </li>
-               <li >Population: 20,000
-               </li>
-               <li >Income: $23 USD/anually
-               </li>
-               <li >Area GDP: -$1221 USD
-               </li>
-            </ul>
-            <a class="btn btn-motive" href="#" tabindex="0" >Learn More</a>
-         </div>
-      </div>
-   </div>
-</div>
+
 </body>
 </html>
