@@ -1,8 +1,9 @@
 <!DOCTYPE html> 
 <html>
 <head>
+</head>
 <style>
-html, body, img, figure {
+  html, body, img, figure {
     max-width: 100%;
 }
 button, .btn {
@@ -35,7 +36,7 @@ ol, ul {
 }
 .ct-u-padding-bottom-40 {
     padding-bottom: 40px;
-	padding-top: 40px;
+  padding-top: 40px;
 }
 .ct-map {
     position: relative;
@@ -126,7 +127,7 @@ ol, ul {
     position: absolute;
     top: 46%;
     left: 12px;
-	outline: none;
+  outline: none;
 }
 .ct-city.orlando2 {
     top: 24%;
@@ -175,7 +176,7 @@ ol, ul {
     text-transform: none;
 }
 .ct-city.active {
-	z-index: 30;
+  z-index: 30;
 }
 .ct-city.active .ct-popup {
     opacity: 1;
@@ -183,7 +184,7 @@ ol, ul {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
-	position: relative;
+  position: relative;
     z-index: 20;
 }
 .ct-content li {
@@ -216,104 +217,80 @@ ol, ul {
 }
 
 @media (min-width: 1399px) {
-	.container {
-		width: 1334px;
-	}
-	.ct-map__image {
-		max-width: none;
-		width: 562px;
-		margin-top: -3px;
-		position: relative;
-		left: 11px;
-	}
+  .container {
+    width: 1334px;
+  }
+  .ct-map__image {
+    max-width: none;
+    width: 562px;
+    margin-top: -3px;
+    position: relative;
+    left: 11px;
+  }
 }
 @media only screen and (min-width: 1024px) {
-	.ct-content .btn {
-		margin-top: 55px;
-	}
-	.ct-section-header {
-		padding-top: 77px;
-	}
-	.ct-map__section .container {
-		padding-bottom: 71px;
-	}
+  .ct-content .btn {
+    margin-top: 55px;
+  }
+  .ct-section-header {
+    padding-top: 77px;
+  }
+  .ct-map__section .container {
+    padding-bottom: 71px;
+  }
 }
 @media only screen and (min-width: 768px){
-	.ct-popup__content {
-		position: relative;
-		text-align: center;
-		letter-spacing: 0.15px;
-		line-height: 1.25;
-	}
-	.ct-city__name {
-		font-size: 18px;
-	}
+  .ct-popup__content {
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.15px;
+    line-height: 1.25;
+  }
+  .ct-city__name {
+    font-size: 18px;
+  }
 }
-@media only screen and (max-width: 768px) {
-	.ct-map {
-		margin-top: 40px;
-		width: 100%;
-	}
-	.ct-city.active {
-		width: 100%;
-		height: 100%;
-		top: 0 !important;
-		left: 0 !important;
-		margin: 0;
-		z-index: 40;
-	}
-	.ct-city.active .ct-popup {
-		width: 100%;
-		height: 100%;
-	}
+@media only screen and (max-width: 767px) {
+  .ct-map {
+    margin-top: 40px;
+    width: 100%;
+  }
+  .ct-city.active {
+    width: 100%;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0;
+    z-index: 40;
+  }
+  .ct-city.active .ct-popup {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media only screen and (max-width: 479px) {
-	.ct-city.stone {
-		top: -30%;
-		left: 42%;
-	}
-	.ct-city.orlando2 {
-		top: -5%;
-		left: 15%;
-	}
-	.ct-city.orlando {
-		top: 23%;
-		left: 40%;
-	}	
+  .ct-city.stone {
+    top: -30%;
+    left: 42%;
+  }
+  .ct-city.orlando2 {
+    top: -5%;
+    left: 15%;
+  }
+  .ct-city.orlando {
+    top: 23%;
+    left: 40%;
+  } 
 }
-@media (max-height: 768px) {
-	.ct-section-header {
-		padding-top: 35px;
-	}
-	.ct-map__section .container {
-		padding-bottom: 10px;
-	}
+@media (max-height: 766px) {
+  .ct-section-header {
+    padding-top: 35px;
+  }
+  .ct-map__section .container {
+    padding-bottom: 0px;
+  }
 }
 </style>
-
-<script>
-$(document).ready(function() {
-      var city, map;
-      map = $('.ct-map');
-      city = map.find('.ct-city');
-      city.each(function() {
-        var button, that;
-        that = $(this);
-        button = that.find('.ct-city__button');
-        return button.on('click', function() {
-          city.not(that).removeClass('active');
-          if (that.hasClass('active')) {
-            that.removeClass('active');
-            return map.removeClass('popup-open');
-          } else {
-            that.addClass('active');
-            return map.addClass('popup-open');
-          }
-        });
-      });
-});
-</script>
-</head>
 <body>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -331,7 +308,7 @@ $(document).ready(function() {
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >City A</span>
-                     <p class="ct-popup__content" >
+                     <p class="ct-popup__content" > <span class="ct-popup__content"> </span>
                         Infected<br />at time 14:00.
                      </p>
                   </div>
@@ -364,7 +341,7 @@ $(document).ready(function() {
       <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7" >
          <div class="ct-content" >
             <h2 class="ct-section-header text-left" >
-               Infectious Region<small >Danger imminent</small>
+               Infectious Region<small>Danger imminent</small>
             </h2>
             <br >
             <br >
@@ -382,10 +359,33 @@ $(document).ready(function() {
                <li >Area GDP: -$1221 USD
                </li>
             </ul>
-            <a class="btn btn-motive" href="#" tabindex="0" >Learn More</a>
+            <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Learn More</a>
          </div>
       </div>
    </div>
 </div>
+
+<script language="javascript">
+$(document).ready(function() {
+      var city, map;
+      map = $('.ct-map');
+      city = map.find('.ct-city');
+      city.each(function() {
+        var button, that;
+        that = $(this);
+        button = that.find('.ct-city__button');
+        return button.on('click', function() {
+          city.not(that).removeClass('active');
+          if (that.hasClass('active')) {
+            that.removeClass('active');
+            return map.removeClass('popup-open');
+          } else {
+            that.addClass('active');
+            return map.addClass('popup-open');
+          }
+        });
+      });
+});
+</script>
 </body>
 </html>
