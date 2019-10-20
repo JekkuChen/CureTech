@@ -177,16 +177,16 @@ ol, ul {
     text-transform: none;
 }
 .ct-city.active {
-  z-index: 30;
+    z-index: 30;
 }
 .ct-city.active .ct-popup {
-    opacity: 1;
+    opacity: 0.8;
     display: inline-table;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
-  position: relative;
-    z-index: 20;
+    position: relative;
+    z-index: 10;
 }
 .ct-content li {
     font-weight: 700;
@@ -199,7 +199,7 @@ ol, ul {
     color: #f59331;
     padding-right: 13px;
 }
-.ct-content .btn {
+.ct-content.btn {
     margin-top: 30px;
 }
 .btn.btn-motive {
@@ -257,16 +257,16 @@ ol, ul {
     width: 100%;
   }
   .ct-city.active {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     top: 0 !important;
     left: 0 !important;
     margin: 0;
     z-index: 40;
   }
   .ct-city.active .ct-popup {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
   }
 }
 @media only screen and (max-width: 479px) {
@@ -307,14 +307,18 @@ ol, ul {
    <div class="row ct-u-padding-bottom-40" >
       <div class="col-lg-6 col-lg-push-6 col-md-7 col-md-push-5" >
          <div class="ct-map" >
-            <img alt="Map" class="ct-map__image" src="https://earthengine.googleapis.com/api/thumb?thumbid=71062f91c2d03717e28ff443debe433c&token=731a76043c8dff18f035abb64b4007cb" >
+            <img class="ct-map__image" src="thumb.png">
             <div class="ct-city a" >
                <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" data-pin-nopin="true" ><span class="ct-city__name" >Kayunga</span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Kayunga</span>
                      <p class="ct-popup__content" >
-                        Population Density:<br /> 225.9/km2<br />Latitude: 0.702743<br /> Longitude: 32.903731
+                       <li>Population Density: 225.9/km2</li>  
+                       <li id = "weatherA"> </li>
+                       <li id = "temperatureA"> </li>
+                       <li id = "pressureA"> </li> 
+                       <li id = "humidityA"> </li> 
                      </p>
                   </div>
                </div>
@@ -325,7 +329,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Mukono</span>
                      <p class="ct-popup__content" >
-                        Population Density:<br /> 5,159/km2<br />Latitude: 0.358217<br /> Longitude: 32.754294
+                       <li>Population Density: 5,159/km2</li>  
+                       <li id = "weatherB"> </li>
+                       <li id = "temperatureB"> </li>
+                       <li id = "pressureB"> </li> 
+                       <li id = "humidityB"> </li> 
                      </p>
                   </div>
                </div>
@@ -336,7 +344,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Kampala</span>
                      <p class="ct-popup__content" >
-                       *CAPITAL*<br />Population Density:<br /> 3,200/km2<br />Latitude: 0.340990<br /> Longitude: 32.5785
+                       <li>Population Density: 3,200/km2</li>  
+                       <li id = "weatherC"> </li>
+                       <li id = "temperatureC"> </li>
+                       <li id = "pressureC"> </li> 
+                       <li id = "humidityC"> </li> 
                      </p>
                   </div>
                </div>
@@ -347,7 +359,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Jinja</span>
                      <p class="ct-popup__content" >
-                       Population Density:<br /> 744.9/km2<br />Latitude: 0.448300<br /> Longitude: 33.205140
+                       <li>Population Density: 744.9/km2</li>  
+                       <li id = "weatherD"> </li>
+                       <li id = "temperatureD"> </li>
+                       <li id = "pressureD"> </li> 
+                       <li id = "humidityD"> </li> 
                      </p>
                   </div>
                </div>
@@ -362,10 +378,7 @@ ol, ul {
             <br >
             <br >
             <ul class="list-unstyled" >
-              <li id = "weather"> </li>
-              <li id = "temperature"> </li>
-              <li id = "pressure"> </li>
-              <li id = "humidity"> </li>
+              <li> Work in progress </li>
             </ul>
             <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=2014-06-01&cloud_score=True&dim=0.5&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
          </div>
@@ -401,26 +414,37 @@ url:"https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=
   }
   });
 $.ajax({
-  url:"http://api.openweathermap.org/data/2.5/weather?q=Kampala,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
-    //CityName = "City Name: " + data.name;
-    MainWeather = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
-    // Description = data.weather[0].description;
-    Temperature = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
-    Pressure = "Pressure: " + data.main.pressure + " mBar";
-    Humidity = "Humidity: " + data.main.humidity + "%";
-
-    //document.getElementById("name").innerHTML = CityName;
-    document.getElementById("weather").innerHTML = MainWeather;
-    //document.getElementById("description").innerHTML = Description;
-    document.getElementById("temperature").innerHTML = Temperature;
-    document.getElementById("pressure").innerHTML = Pressure;
-    document.getElementById("humidity").innerHTML = Humidity;
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Kayunga,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    document.getElementById("weatherA").innerHTML = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
+    document.getElementById("temperatureA").innerHTML = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
+    document.getElementById("pressureA").innerHTML = "Pressure: " + data.main.pressure + " mBar";
+    document.getElementById("humidityA").innerHTML = "Humidity: " + data.main.humidity + "%";
   }
 });
-console.log(CityName);
-console.log(MainWeather);
-console.log(Temperature);
-console.log(Humidity);
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Mukono,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    document.getElementById("weatherB").innerHTML = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
+    document.getElementById("temperatureB").innerHTML = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
+    document.getElementById("pressureB").innerHTML = "Pressure: " + data.main.pressure + " mBar";
+    document.getElementById("humidityB").innerHTML = "Humidity: " + data.main.humidity + "%";
+  }
+});
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Kampala,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    document.getElementById("weatherC").innerHTML = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
+    document.getElementById("temperatureC").innerHTML = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
+    document.getElementById("pressureC").innerHTML = "Pressure: " + data.main.pressure + " mBar";
+    document.getElementById("humidityC").innerHTML = "Humidity: " + data.main.humidity + "%";
+  }
+});
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Jinja,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    document.getElementById("weatherD").innerHTML = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
+    document.getElementById("temperatureD").innerHTML = "Temperature: " + Math.round((data.main.temp-273.00)*10)/10+"°C";
+    document.getElementById("pressureD").innerHTML = "Pressure: " + data.main.pressure + " mBar";
+    document.getElementById("humidityD").innerHTML = "Humidity: " + data.main.humidity + "%";
+  }
+});
 
 </script>
 
