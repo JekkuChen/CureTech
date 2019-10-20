@@ -183,7 +183,7 @@ ol, ul {
 .ct-city__button {
     background: none;
     border: none;
-    z-index: 30;
+    z-index: 1;
     position: absolute;
     top: 46%;
     left: 12px;
@@ -229,7 +229,7 @@ ol, ul {
     text-transform: none;
 }
 .ct-city.active {
-    z-index: 30;
+    z-index: 1;
 }
 .ct-city.active .ct-popup {
     opacity: 0.8;
@@ -315,7 +315,7 @@ ol, ul {
     top: 0 !important;
     left: 0 !important;
     margin: 0;
-    z-index: 40;
+    z-index: 1;
   }
   .ct-city.active .ct-popup {
     width: 50%;
@@ -362,7 +362,7 @@ ol, ul {
          <div class="ct-map" >
             <img class="ct-map__image" src="thumb.png">
             <div class="ct-city a" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" data-pin-nopin="true" ><span class="ct-city__name" >Kayunga</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" data-pin-nopin="true" ><span class="ct-city__name" ><font color="lime">Low Risk</br>Kayunga</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Kayunga</span>
@@ -377,7 +377,7 @@ ol, ul {
                </div>
             </div>
             <div class="ct-city b">
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png"  data-pin-nopin="true"><span class="ct-city__name" >Mukono</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png"  data-pin-nopin="true"><span class="ct-city__name" ><font color="lime">Low Risk</br>Mukono</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Mukono</span>
@@ -392,7 +392,7 @@ ol, ul {
                </div>
             </div>
             <div class="ct-city c" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >Kampala</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" ><span class="ct-city__name" ><font color="lime">Low Risk</br>Kampala</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Kampala</span>
@@ -407,7 +407,7 @@ ol, ul {
                </div>
             </div>
             <div class="ct-city d" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="https://www.solodev.com/assets/map/map-plus.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="https://www.solodev.com/assets/map/map-close.png" ><span class="ct-city__name" >Jinja</span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" ><span class="ct-city__name" ><font color="lime">Low Risk</br>Jinja</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Jinja</span>
@@ -486,6 +486,18 @@ $(document).ready(function() {
         });
       });
 });
+
+function risk(rs) {
+  if (riskscore == ??) {
+  
+  } else if (riskscore == ??) {
+
+  } else if (riskscore == ??) {
+
+  } else {
+
+  }
+}
 
 function handleClick(cb) {
 
