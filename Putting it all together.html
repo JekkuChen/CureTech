@@ -45,41 +45,6 @@ ol, ul {
     transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     margin-top: 55px;
 }
-.ct-popuph {
-    background: #1aa6e2;
-    border-radius: 50%;
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    color: white;
-    padding: 0px 0px 0px;
-    overflow: hidden;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 12%;
-    -ms-transform-origin: 12%;
-    transform-origin: 12%;
-    opacity: 0;
-    -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
-    transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
-}
-.ct-popuph > .ct-popup__innerh, .ct-popuph > .innerh {
-    display: table-cell;
-    width: 100%;
-    vertical-align: middle;
-}
-.ct-popup__nameh {
-    font-family: 'Oswald', sans-serif;
-    font-size: 22px;/*48 px*/
-    text-transform: uppercase;
-    padding-bottom: 14px;
-    display: block;
-}
-.ct-popup__contenth {
-    font-size: 16px;/*16 px*/
-    font-family: 'Helvetica', sans-serif;
-}
 
 .ct-popup {
     background: #1aa6e2;
@@ -123,17 +88,6 @@ ol, ul {
     width: 334px;
     height: 334px;
 }
-
-.ct-city__header .ct-closeh{
-    display: none;
-}
-.ct-city.activeh .ct-city__buttonh .ct-closeh {
-    display: block;
-}
-.ct-city.activeh .ct-city__buttonh .ct-plush, .ct-city.activeh .ct-city__buttong .ct-city__nameh {
-    display: none;
-}
-
 
 .ct-city__button .ct-close {
     display: none;
@@ -183,7 +137,7 @@ ol, ul {
 .ct-city__button {
     background: none;
     border: none;
-    z-index: 1;
+    z-index: 20;
     position: absolute;
     top: 46%;
     left: 12px;
@@ -229,7 +183,7 @@ ol, ul {
     text-transform: none;
 }
 .ct-city.active {
-    z-index: 1;
+    z-index: 40;
 }
 .ct-city.active .ct-popup {
     opacity: 0.8;
@@ -238,7 +192,7 @@ ol, ul {
     -ms-transform: scale(1);
     transform: scale(1);
     position: relative;
-    z-index: 1;
+    z-index: 30;
 }
 .ct-content li {
     font-weight: 700;
@@ -267,6 +221,10 @@ ol, ul {
     border-radius: 0;
     position: relative;
     letter-spacing: 0.3px;
+}
+
+#ct-low-risk {
+
 }
 
 @media (min-width: 1399px) {
@@ -315,7 +273,7 @@ ol, ul {
     top: 0 !important;
     left: 0 !important;
     margin: 0;
-    z-index: 1;
+    z-index: 40;
   }
   .ct-city.active .ct-popup {
     width: 50%;
@@ -362,7 +320,7 @@ ol, ul {
          <div class="ct-map" >
             <img class="ct-map__image" src="thumb.png">
             <div class="ct-city a" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" data-pin-nopin="true" ><span class="ct-city__name" ><font color="lime">Low Risk</br>Kayunga</font></span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" data-pin-nopin="true" ><span class="ct-city__name" ><font id = "colourState1">Kayunga</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Kayunga</span>
@@ -377,7 +335,7 @@ ol, ul {
                </div>
             </div>
             <div class="ct-city b">
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png"  data-pin-nopin="true"><span class="ct-city__name" ><font color="lime">Low Risk</br>Mukono</font></span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png"  data-pin-nopin="true"><span class="ct-city__name" ><font id = "colourState2">Mukono</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Mukono</span>
@@ -392,7 +350,7 @@ ol, ul {
                </div>
             </div>
             <div class="ct-city c" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" ><span class="ct-city__name" ><font color="lime">Low Risk</br>Kampala</font></span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" ><span class="ct-city__name" ><font id = "colourState3">Kampala</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Kampala</span>
@@ -407,7 +365,7 @@ ol, ul {
                </div>
             </div>
             <div class="ct-city d" >
-               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" ><span class="ct-city__name" ><font color="lime">Low Risk</br>Jinja</font></span></button>
+               <button class="ct-city__button" type="button" tabindex="0" ><img alt="Map Open Icon" class="ct-plus" src="map-icon.png"  data-pin-nopin="true"><img alt="Map Close Icon" class="ct-close" src="map-icon-close.png" ><span class="ct-city__name" ><font id = "colourState4">Jinja</font></span></button>
                <div class="ct-popup" >
                   <div class="inner" >
                      <span class="ct-popup__name" >Jinja</span>
@@ -426,7 +384,7 @@ ol, ul {
       <div class="col-lg-6 col-lg-pull-6 col-md-5 col-md-pull-7" >
          <div class="ct-content" >
             <h2 class="ct-section-header text-left" >
-               Region ? <small>Danger: ?, Risk-Factor: ? %</small>
+               Central Uganda <small>Outbreak Locations:</small>
             </h2>
             <br >
             <form  id="frm" action="/action_page.php">
@@ -437,7 +395,6 @@ ol, ul {
             </form>
             <br >
             <ul class="list-unstyled" >
-              <li id = "test"> </li>
             </ul>
             <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=2014-06-01&cloud_score=True&dim=0.5&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
          </div>
@@ -466,43 +423,10 @@ $(document).ready(function() {
         });
       });
 });
-$(document).ready(function() {
-      var city, map;
-      map = $('.ct-map');
-      city = map.find('.ct-city');
-      city.each(function() {
-        var button, that;
-        that = $(this);
-        button = that.find('.ct-city__buttonh');
-        return button.on('click', function() {
-          city.not(that).removeClass('activeh');
-          if (that.hasClass('activeh')) {
-            that.removeClass('activeh');
-            return map.removeClass('popup-openh');
-          } else {
-            that.addClass('activeh');
-            return map.addClass('popup-openh');
-          }
-        });
-      });
-});
 
-function risk(rs) {
-  if (riskscore == ??) {
-  
-  } else if (riskscore == ??) {
-
-  } else if (riskscore == ??) {
-
-  } else {
-
-  }
-}
-
-function handleClick(cb) {
 var numCities;
 var coordinates = [[0.340990, 32.5785], [0.448300, 33.205140], [0.358217, 32.754294], [0.702743, 32.903731]];
-var cities = ["Kampala", "Jinja", "Mukuno", "Kayunga"];
+var cities = ["Kampala", "Jinja", "Mukono", "Kayunga"];
 var popDensity = [3200, 744.9, 5159, 225.9];
 var humidities = [];
 var temperature = [];
@@ -543,7 +467,58 @@ function distance(idx1, idx2){
 }
 
 function calcRisk(dist, humid, popDense, temp){
-    return ((temp/30.0)+(humid-50)*0.2+3.0*Math.log(popDense))/(dist*dist);
+    return ((temp/30.0)+(humid-50)*0.2+3.0*Math.log(popDense))/(Math.pow(dist, 1.78));
+}
+
+var str = ["", "", "", ""];
+
+function riskScore1(index1) {
+  var rs1 = risk[index1];
+  if (rs1 <= 3) {
+        document.getElementById("colourState1").innerHTML = "Kayunga".fontcolor("Lime") + "<br />" + " Low Risk".fontcolor("Lime");
+  } else if (rs1 <= 6) {
+        document.getElementById("colourState1").innerHTML = "Kayunga".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
+  } else if (rs1 <= 12) {
+        document.getElementById("colourState1").innerHTML = "Kayunga".fontcolor("Orange") + "<br />" + " High Risk".fontcolor("Orange");
+  } else {
+        document.getElementById("colourState1").innerHTML = "Kayunga".fontcolor("Red") + "<br />" + " Extreme Risk".fontcolor("Red");
+  }
+}
+function riskScore2(index2) {
+  var rs2 = risk[index2];
+  if (rs2 <= 3) {
+        document.getElementById("colourState2").innerHTML = "Mukono".fontcolor("Lime") + "<br />" +" Low Risk".fontcolor("Lime");
+  } else if (rs2 <= 6) {
+        document.getElementById("colourState2").innerHTML = "Mukono".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
+  } else if (rs2 <= 12) {
+        document.getElementById("colourState2").innerHTML = "Mukono".fontcolor("Orange") + "<br />" + " High Risk".fontcolor("Orange");
+  } else {
+        document.getElementById("colourState2").innerHTML = "Mukono".fontcolor("Red") + "<br />" + " Extreme Risk".fontcolor("Red");
+  }
+}
+function riskScore3(index3) {
+  var rs3 = risk[index3];
+  if (rs3 <= 3) {
+        document.getElementById("colourState3").innerHTML = "Kampala".fontcolor("Lime") + "<br />" + " Low Risk".fontcolor("Lime");
+  } else if (rs3 <= 6) {
+        document.getElementById("colourState3").innerHTML = "Kampala".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
+  } else if (rs3 <= 12) {
+        document.getElementById("colourState3").innerHTML = "Kampala".fontcolor("Orange") + "<br />" + " High Risk".fontcolor("Orange");
+  } else {
+        document.getElementById("colourState3").innerHTML = "Kampala".fontcolor("Red") + "<br />" + " Extreme Risk".fontcolor("Red");
+  }
+}
+function riskScore4(index4) {
+  var rs4 = risk[index4];
+  if (rs4 <= 3) {
+        document.getElementById("colourState4").innerHTML = "Jinja".fontcolor("Lime") + "<br />" + " Low Risk".fontcolor("Lime");
+  } else if (rs4 <= 6) {
+        document.getElementById("colourState4").innerHTML = "Jinja".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
+  } else if (rs4 <= 12) {
+        document.getElementById("colourState4").innerHTML = "Jinja".fontcolor("Orange") + "<br />" + " High Risk".fontcolor("Orange");
+  } else {
+        document.getElementById("colourState4").innerHTML = "Jinja".fontcolor("Red") + "<br />" + " Extreme Risk".fontcolor("Red");
+  }
 }
 
 function algo(){
@@ -558,7 +533,7 @@ function algo(){
       }
     }
   } 
-  alert(risk[0] + " " + risk[1] + " " + risk[2] + " " + risk[3]);
+  //alert(risk[0] + " " + risk[1] + " " + risk[2] + " " + risk[3]);
 }
 
 function handleClick(cb) {
@@ -576,6 +551,10 @@ function handleClick(cb) {
   }
   risk[0] = risk[1] = risk[2] = risk[3] = 0;
   algo();
+  riskScore1(3);
+  riskScore2(2);
+  riskScore3(0);
+  riskScore4(1);
 }
 
 $.ajax({
@@ -615,7 +594,6 @@ $.ajax({
     document.getElementById("humidityD").innerHTML = "Humidity: " + data.main.humidity + "%";
   }
 });
-
 </script>
 
 </body>
