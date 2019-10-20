@@ -430,10 +430,10 @@ ol, ul {
             </h2>
             <br >
             <form  id="frm" action="/action_page.php">
-              <input type="checkbox" onclick = 'handleClick(this);' name="cityA" value="true"> Kayunga<br>
-              <input type="checkbox" onclick = 'handleClick(this);' name="cityB" value="true"> Mukono<br>
-              <input type="checkbox" onclick = 'handleClick(this);' name="cityC" value="true"> Kampala <br>
-              <input type="checkbox" onclick = 'handleClick(this);' name="cityD" value="true"> Jinja<br><br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityA" value="A"> Kampala<br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityB" value="B"> Jinja<br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityC" value="C"> Mukuno<br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityD" value="D"> Kayunga<br><br>
             </form>
             <br >
             <ul class="list-unstyled" >
@@ -500,7 +500,82 @@ function risk(rs) {
 }
 
 function handleClick(cb) {
+var numCities;
+var coordinates = [[0.340990, 32.5785], [0.448300, 33.205140], [0.358217, 32.754294], [0.702743, 32.903731]];
+var cities = ["Kampala", "Jinja", "Mukuno", "Kayunga"];
+var popDensity = [3200, 744.9, 5159, 225.9];
+var humidities = [];
+var temperature = [];
+var risk = [0, 0, 0, 0];
+var longitude = 111.321, latitude = 111.0;
+var startingCities = [0, 0, 0, 0];
 
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Kampala,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    temperature[0] = data.main.temp;
+    humidities[0] = data.main.humidity;
+  }
+});
+
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Jinja,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    temperature[1] = data.main.temp;
+    humidities[1] = data.main.humidity;
+  }
+});
+
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Mukono,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    temperature[2] = data.main.temp;
+    humidities[2] = data.main.humidity;
+  }
+});
+
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Kayunga,UG&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+    temperature[3] = data.main.temp;
+    humidities[3] = data.main.humidity;
+  }
+});
+
+function distance(idx1, idx2){
+    return Math.sqrt((coordinates[idx1][0]-coordinates[idx2][0])*(coordinates[idx1][0]-coordinates[idx2][0])*latitude+(coordinates[idx1][1]-coordinates[idx2][1])*(coordinates[idx1][1]-coordinates[idx2][1])*longitude);
+}
+
+function calcRisk(dist, humid, popDense, temp){
+    return ((temp/30.0)+(humid-50)*0.2+3.0*Math.log(popDense))/(dist*dist);
+}
+
+function algo(){
+  for(var j = 0; j < 4; j++){
+    if(startingCities[j]==1){
+      for(var i = 0; i < 4; i++){
+        if(i!=j){
+          risk[i] += calcRisk(distance(j, i), humidities[i], popDensity[i], temperature[i]);
+        } else {
+          risk[i] = 1000000000;
+        }
+      }
+    }
+  } 
+  alert(risk[0] + " " + risk[1] + " " + risk[2] + " " + risk[3]);
+}
+
+function handleClick(cb) {
+  if(cb.value=="A"){
+    startingCities[0] ^= 1;
+  }
+  if(cb.value=="B"){
+    startingCities[1] ^= 1;
+  }  
+  if(cb.value=="C"){
+    startingCities[2] ^= 1;
+  }
+  if(cb.value=="D"){
+    startingCities[3] ^= 1;
+  }
+  risk[0] = risk[1] = risk[2] = risk[3] = 0;
+  algo();
 }
 
 $.ajax({
