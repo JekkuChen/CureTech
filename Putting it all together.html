@@ -30,7 +30,7 @@ ol, ul {
     margin-bottom: 10px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-.ct-map__section.container {
+.ct-map__section .container {
     padding-top: 20px;
     padding-bottom: 30px;
 }
@@ -44,8 +44,43 @@ ol, ul {
     -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     margin-top: 55px;
-    margin-right: 300px;
 }
+.ct-popuph {
+    background: #1aa6e2;
+    border-radius: 50%;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    padding: 0px 0px 0px;
+    overflow: hidden;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 12%;
+    -ms-transform-origin: 12%;
+    transform-origin: 12%;
+    opacity: 0;
+    -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
+}
+.ct-popuph > .ct-popup__innerh, .ct-popuph > .innerh {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+.ct-popup__nameh {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;/*48 px*/
+    text-transform: uppercase;
+    padding-bottom: 14px;
+    display: block;
+}
+.ct-popup__contenth {
+    font-size: 16px;/*16 px*/
+    font-family: 'Helvetica', sans-serif;
+}
+
 .ct-popup {
     background: #1aa6e2;
     border-radius: 50%;
@@ -65,6 +100,7 @@ ol, ul {
     -webkit-transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
     transition: all 250ms cubic-bezier(0.55, 0, 0.1, 1);
 }
+
 .ct-popup > .ct-popup__inner, .ct-popup > .inner {
     display: table-cell;
     width: 100%;
@@ -81,11 +117,24 @@ ol, ul {
     font-size: 16px;/*16 px*/
     font-family: 'Helvetica', sans-serif;
 }
+
 .ct-city {
     position: absolute;
     width: 334px;
     height: 334px;
 }
+
+.ct-city__header .ct-closeh{
+    display: none;
+}
+.ct-city.activeh .ct-city__buttonh .ct-closeh {
+    display: block;
+}
+.ct-city.activeh .ct-city__buttonh .ct-plush, .ct-city.activeh .ct-city__buttong .ct-city__nameh {
+    display: none;
+}
+
+
 .ct-city__button .ct-close {
     display: none;
 }
@@ -95,6 +144,8 @@ ol, ul {
 .ct-city.active .ct-city__button .ct-plus, .ct-city.active .ct-city__button .ct-city__name {
     display: none;
 }
+
+
 .ct-city__name {
     display: block;
     font-weight: bold;
@@ -187,7 +238,7 @@ ol, ul {
     -ms-transform: scale(1);
     transform: scale(1);
     position: relative;
-    z-index: 10;
+    z-index: 1;
 }
 .ct-content li {
     font-weight: 700;
@@ -255,6 +306,7 @@ ol, ul {
 @media only screen and (max-width: 767px) {
   .ct-map {
     margin-top: 40px;
+    margin-right: 200px;
     width: 100%;
   }
   .ct-city.active {
@@ -377,9 +429,15 @@ ol, ul {
                Region ? <small>Danger: ?, Risk-Factor: ? %</small>
             </h2>
             <br >
+            <form  id="frm" action="/action_page.php">
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityA" value="true"> Kayunga<br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityB" value="true"> Mukono<br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityC" value="true"> Kampala <br>
+              <input type="checkbox" onclick = 'handleClick(this);' name="cityD" value="true"> Jinja<br><br>
+            </form>
             <br >
             <ul class="list-unstyled" >
-              <li> Work in progress </li>
+              <li id = "test"> </li>
             </ul>
             <a class="btn btn-motive" href="https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=2014-06-01&cloud_score=True&dim=0.5&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC" tabindex="0" >Raw Data found here</a>
          </div>
@@ -408,10 +466,34 @@ $(document).ready(function() {
         });
       });
 });
+$(document).ready(function() {
+      var city, map;
+      map = $('.ct-map');
+      city = map.find('.ct-city');
+      city.each(function() {
+        var button, that;
+        that = $(this);
+        button = that.find('.ct-city__buttonh');
+        return button.on('click', function() {
+          city.not(that).removeClass('activeh');
+          if (that.hasClass('activeh')) {
+            that.removeClass('activeh');
+            return map.removeClass('popup-openh');
+          } else {
+            that.addClass('activeh');
+            return map.addClass('popup-openh');
+          }
+        });
+      });
+});
+
+function handleClick(cb) {
+
+}
 
 $.ajax({
 url:"https://api.nasa.gov/planetary/earth/imagery/?lon=32.882&lat=0.322098&date=2014-06-01&cloud_score=True&dim=0.5&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
-  var bla ="<img src="+testing.url+" style = 'width:50%; opacity: 50%;' />";
+  var bla ="<img src="+testing.url+" style = 'width:50%; opacity: 70%;' />";
   }
   });
 $.ajax({
