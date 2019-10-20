@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <h1 id = "what"></h1>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+      var beast;
+      var num = 0;
+
+      function imageAdd(choice) {
+        beast = choice;
+        document.getElementById("what").innerHTML = num;
+        updateUI();
+      }
+
+      function updateUI() {
+        if (beast == "yes") {
+          document.getElementById('test1').innerHTML += '<img> an image map goes here';
+          num+=1;
+        }
+      }
+      </script>
+    <button id="butterbutton" onclick="imageAdd('yes'); ">
+  <img id="worldimg" src="ICON.jpg"></img>
+  </button>
+
+  </body>
+</html>

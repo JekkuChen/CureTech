@@ -325,11 +325,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Kayunga</span>
                      <p class="ct-popup__content" >
-                       <li>Population Density: 225.9/km2</li>  
+                       <li>Population Density: 225.9/km2</li>
                        <li id = "weatherA"> </li>
                        <li id = "temperatureA"> </li>
-                       <li id = "pressureA"> </li> 
-                       <li id = "humidityA"> </li> 
+                       <li id = "pressureA"> </li>
+                       <li id = "humidityA"> </li>
                      </p>
                   </div>
                </div>
@@ -340,11 +340,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Mukono</span>
                      <p class="ct-popup__content" >
-                       <li>Population Density: 5,159/km2</li>  
+                       <li>Population Density: 5,159/km2</li>
                        <li id = "weatherB"> </li>
                        <li id = "temperatureB"> </li>
-                       <li id = "pressureB"> </li> 
-                       <li id = "humidityB"> </li> 
+                       <li id = "pressureB"> </li>
+                       <li id = "humidityB"> </li>
                      </p>
                   </div>
                </div>
@@ -355,11 +355,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Kampala</span>
                      <p class="ct-popup__content" >
-                       <li>Population Density: 3,200/km2</li>  
+                       <li>Population Density: 3,200/km2</li>
                        <li id = "weatherC"> </li>
                        <li id = "temperatureC"> </li>
-                       <li id = "pressureC"> </li> 
-                       <li id = "humidityC"> </li> 
+                       <li id = "pressureC"> </li>
+                       <li id = "humidityC"> </li>
                      </p>
                   </div>
                </div>
@@ -370,11 +370,11 @@ ol, ul {
                   <div class="inner" >
                      <span class="ct-popup__name" >Jinja</span>
                      <p class="ct-popup__content" >
-                       <li>Population Density: 744.9/km2</li>  
+                       <li>Population Density: 744.9/km2</li>
                        <li id = "weatherD"> </li>
                        <li id = "temperatureD"> </li>
-                       <li id = "pressureD"> </li> 
-                       <li id = "humidityD"> </li> 
+                       <li id = "pressureD"> </li>
+                       <li id = "humidityD"> </li>
                      </p>
                   </div>
                </div>
@@ -467,14 +467,14 @@ function distance(idx1, idx2){
 }
 
 function calcRisk(dist, humid, popDense, temp){
-    return ((temp/30.0)+(humid-50)*0.2+3.0*Math.log(popDense))/(Math.pow(dist, 1.78));
+    return ((temp/30.0)+(humid-50)*0.2+3.0*Math.log(popDense))/(Math.pow(dist, 1.70));
 }
 
 var str = ["", "", "", ""];
 
 function riskScore1(index1) {
   var rs1 = risk[index1];
-  if (rs1 <= 3) {
+  if (rs1 <= 2.5) {
         document.getElementById("colourState1").innerHTML = "Kayunga".fontcolor("Lime") + "<br />" + " Low Risk".fontcolor("Lime");
   } else if (rs1 <= 6) {
         document.getElementById("colourState1").innerHTML = "Kayunga".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
@@ -486,7 +486,7 @@ function riskScore1(index1) {
 }
 function riskScore2(index2) {
   var rs2 = risk[index2];
-  if (rs2 <= 3) {
+  if (rs2 <= 2.5) {
         document.getElementById("colourState2").innerHTML = "Mukono".fontcolor("Lime") + "<br />" +" Low Risk".fontcolor("Lime");
   } else if (rs2 <= 6) {
         document.getElementById("colourState2").innerHTML = "Mukono".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
@@ -498,7 +498,7 @@ function riskScore2(index2) {
 }
 function riskScore3(index3) {
   var rs3 = risk[index3];
-  if (rs3 <= 3) {
+  if (rs3 <= 2.5) {
         document.getElementById("colourState3").innerHTML = "Kampala".fontcolor("Lime") + "<br />" + " Low Risk".fontcolor("Lime");
   } else if (rs3 <= 6) {
         document.getElementById("colourState3").innerHTML = "Kampala".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
@@ -510,7 +510,7 @@ function riskScore3(index3) {
 }
 function riskScore4(index4) {
   var rs4 = risk[index4];
-  if (rs4 <= 3) {
+  if (rs4 <= 2.5) {
         document.getElementById("colourState4").innerHTML = "Jinja".fontcolor("Lime") + "<br />" + " Low Risk".fontcolor("Lime");
   } else if (rs4 <= 6) {
         document.getElementById("colourState4").innerHTML = "Jinja".fontcolor("Yellow") + "<br />" + " Medium Risk".fontcolor("Yellow");
@@ -532,7 +532,7 @@ function algo(){
         }
       }
     }
-  } 
+  }
   //alert(risk[0] + " " + risk[1] + " " + risk[2] + " " + risk[3]);
 }
 
@@ -542,7 +542,7 @@ function handleClick(cb) {
   }
   if(cb.value=="B"){
     startingCities[1] ^= 1;
-  }  
+  }
   if(cb.value=="C"){
     startingCities[2] ^= 1;
   }
