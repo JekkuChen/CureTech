@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<title> NASA Earth Imagery API </title>
+
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script>
+// var CityName;
+// var MainWeather;
+// var Description;
+// var Temperature;
+// var Pressure;
+// var Humidity;
+$.ajax({
+url:"https://api.nasa.gov/planetary/earth/imagery?lon=-79.576&lat=43.569&date=2016-10-01&cloud_score=True&api_key=Htj3JGFJqmB7PUcXTTddAik0V8tF49hgshLf9fNC", success:function(testing){
+	var bla ="<img src="+testing.url+" style = 'width:50%; opacity: 70%;' />";
+	}
+	});
+$.ajax({
+  url:"http://api.openweathermap.org/data/2.5/weather?q=Mississauga,CAN&APPID=4635af5bc72d62b15edb27ccfe1b6661", success:function(data){
+  	CityName = data.name;
+  	MainWeather = data.weather[0].main;
+    Description = data.weather[0].description;
+    Temperature = Math.round((data.main.temp-273.00)*10)/10+"°C";
+    Pressure = data.main.pressure;
+    Humidity = data.main.humidity;
+
+  	}
+});
+console.log(CityName);
+console.log(MainWeather);
+console.log(Temperature);
+console.log(Humidity);
+
+	</script>
